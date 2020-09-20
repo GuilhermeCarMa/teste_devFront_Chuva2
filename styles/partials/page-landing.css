@@ -1,0 +1,578 @@
+#container {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+/* HEADER */
+.header {
+    /* Fiz desta forma, pois não me recordo de forma alguma como coloca algo ao lado do float left no #side-menu */
+    position: relative;
+    float: right;
+
+    /* Acabei optando pelo calc ficar responsivo, fazendo 100viewport widht - largura do aside*/
+    width: calc(100vw - 220px);
+    /* Acabei optando pelo auto para respeitar o conteúdo dentro do header, senão o conteúdo iria "escapar" do limite do header */
+    height: auto;
+    background-color: var(--color-background-header);
+}
+.header-content {
+    padding: 0px 40px;
+    height: 100%;
+
+    background-color: var(--color-background-header);
+
+    display: grid;
+    grid-template-columns: 2.5fr .5fr 1fr 1fr;
+    grid-template-rows: 100%;
+    gap: 10px;
+
+    justify-content: center;
+    align-items: center;
+}
+.header-content .header-p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    text-align: justify;
+    color: #725C5C;
+
+    height: 100%;
+}
+.header-content .header-p span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+}
+.header-content #header-button-language img{
+    height: 21px;
+    width: 22px;
+}
+.header-content #header-button-language {
+    background-color: var(--color-background-header);
+
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    height: 34px;
+    width: 97px;
+
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+.header-content #header-account {
+    display: block;
+    text-align: right;
+
+    padding-top: 5px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    color: #333333;
+}
+.header-content #header-account-p1 {
+    font-size: 14px;
+    line-height: 17px;
+}
+.header-content #header-account-p2 {
+    font-size: 12px;
+    line-height: 15px;
+}
+.header-content #header-account-img {
+    height: 50px;
+}
+
+/* ASIDE */
+.side-menu {
+    position: absolute;
+    float: left;
+
+    background-color: var(--color-background);
+
+    width: 220px;
+    height: 200vh;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.side-menu #sidebar {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+.side-menu #title-sidebar {
+    height: 70px;
+    width: 100%;
+    
+    /* Centralizar no meio, tanto na horizontal, quanto na vertical */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    
+    color: var(--color-background);
+ 
+    background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-darker) 100%);
+}
+.side-menu #logo-sidebar {
+    width: 100%;
+    height: 258px;
+}
+.side-menu #buttons-menu-items {
+    display: flex;
+    flex-direction: column;
+    
+    height: 33px;
+}
+.side-menu #buttons-menu-items .menu-item:hover {
+    background-color: var(--color-primary-lighter);
+
+    margin-left: 5px solid linear-gradient(180deg, #FFB455 0%, #ED7839 100%);
+    height: 100%;
+}
+.side-menu #buttons-menu-items a{
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    color: var(--color-text-title);
+
+    border-bottom: 2px solid var(--color-background-content);
+
+    padding: 5px;
+    padding-left: 25px;
+
+    text-decoration: none;
+}
+
+/* MAIN */
+.main {
+    height: calc(100vh - 70px);
+    width: calc(100vw - 220px);
+
+    background: var(--color-background);
+
+    float: right;
+}
+.main #content-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 56px 1fr;
+
+    grid-template-areas: 
+    "title-main buttons-content-main"
+    "video-main info-content-main";
+
+    column-gap: 40px;
+    row-gap: 20px;
+}
+/* 1° linha e 1° coluna */
+.main #content-main #title-main {
+    margin-left: 40px;
+    margin-bottom: 100px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+
+    color: var(--color-primary);
+}
+/* 1° linha e 2° coluna */
+.main #content-main #buttons-content-main {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+}
+.main #content-main #buttons-content-main .buttons-main {
+    text-decoration: none;
+
+    display: inline;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: var(--color-background);
+    background-color: var(--color-primary);
+
+    border-radius: 4px;
+}
+.main #content-main #buttons-content-main #icon-star,#icon-doi,#icon-download {
+    width: 19px;
+    height: 19px;
+}
+.main #content-main #buttons-content-main p {
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+}
+/* 2° linha e 1° coluna */
+#video-main {
+    margin-left: 40px;
+
+    display: flex;
+    justify-self: center;
+
+    width: 783px;
+    height: 439px;
+
+    background: rgba(141, 53, 6, 0.5);
+    border-radius: 3px;
+}
+/* 2° linha e 2° coluna */
+.main #info-content-main {
+    display: flex;
+    flex-direction: column;
+    
+    border: 1px solid #ECECEC;
+    box-sizing: border-box;
+
+    width: 70%;
+    padding-left: 15px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+}
+.main #info-content-main #title-info {
+    height: 45px;
+
+    border-radius: 3px 3px 0px 0px;
+
+    display: flex;
+    align-items: center;
+
+    color: #4E4E4E;
+    background-color: var(--color-background-header);
+}
+#info-content-main #info-detalhes {
+    padding-top: 20px;    
+
+    font-family: Quicksand;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--color-text-info);
+}
+#info-content-main #info-detalhes .info-detalhes-enfase {
+    font-weight: 500;
+    font-weight: bold;
+}
+#info-content-main #info-detalhes #info-detalhes-small {
+    opacity: .4;
+}
+
+/* 1°e 2° article - commom */
+.div-article-commom12 {
+    margin-top: 60px;
+    margin-left: 40px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    
+    width: 88%;
+
+    border: 1px solid #ECECEC;
+    border-radius: 3px 3px 0px 0px;
+}
+.div-article-commom12 .article-title12 {
+    color: #4E4E4E;
+
+    height: 45px;
+    padding-left: 15px;
+
+    border: 1px solid #ECECEC;
+    
+    display: flex;
+    align-items: center;
+
+    background-color: var(--color-primary-header);
+}
+/* 1° article */
+.div-article-commom12 #first-article {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    opacity: .5;
+    text-align: justify;
+}
+.div-article-commom12 #first-article span {
+    font: 900 1rem Quicksand;
+    opacity: 1;
+
+    color: var(--color-primary);
+}
+/* 2° article */
+.div-article-commom12 #second-title-article {
+    line-height: 21px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-primary);
+
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: center;
+}
+.div-article-commom12 #second-article {
+    width: 100%;
+}
+.div-article-commom12 #second-article {
+    width: 100%;
+}
+.div-article-commom12 #second-article img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+}
+.div-article-commom12 #second-article #second-content {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #595959;
+
+    margin-top: 20px;
+
+    text-align: center;
+}
+.div-article-commom12 #second-article #button-second-article {
+    background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-darker) 100%);
+    
+    width: 133px;
+    height: 32px;
+    padding-right: 10px;
+    margin-top: 20px;
+    margin-bottom: -15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 4px;
+    border: 0;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font: bold 1rem Quicksand;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.div-article-commom12 #second-article #button-second-article img {
+    margin-right: 5px;
+
+    width: 25px;
+    height: 25px;
+}
+.div-article-commom12 #second-article #button-second-article:hover{
+    cursor: pointer;
+}
+/* 3° e 4° article */
+#div-thirdfourth-article {
+    border: 1px solid #E7E7E7;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+
+    margin-left: 40px;
+    margin-top: 45px;
+    width: 88%;
+    
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+#thirdfourth-article-title {
+    color: var(--color-primary);
+
+    padding-top: 15px;
+    padding-left: 25px;
+}
+#thirdfourth-article-author {
+    color: #5c5c5c;
+
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+
+    margin-top: 5px;
+    padding-left: 25px;
+}
+#thirdfourth-article-publication {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #4D4D4D ;
+
+    margin-top: 15px;
+    padding-left: 25px;
+}
+#thirdfourth-article-publication-footer {
+    display: flex;
+    align-items: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 19px;
+    color: #757575;
+
+    margin-bottom: 20px;
+
+    gap: 10px;
+}
+#thirdfourth-article-publication-footer #icon-more {
+    height: 14px;
+    width: 14px;
+
+    padding-left: 25px;
+    margin-top: 10px;
+}
+#thirdfourth-article-publication-footer a {
+    height: 20px;
+    width: 27px;
+    margin-top: 10px;
+    margin-left: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 2px;
+    background: #ED7839;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+
+    background-color: var(--color-primary);
+}
+#thirdfourth-article-publication-footer a img {
+    height: 14px;
+    width: 14px;
+}
+
+/* footer */
+#footer {
+    font: 400 1rem Quicksand;
+
+    margin-top: 175px;
+    margin-left: 40px;
+
+    width: 88%;
+
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr;
+
+    grid-template-areas: 
+    "img p";
+
+    gap: 30px;
+}
+#footer img {
+    width: 300px;
+    height: 200px;
+
+    padding-left: 10px;
+}
+#footer p {
+    margin-top: 40px;
+
+    color: #5C5C5C;
+}
+#footer p span {
+    font: bold 1rem Quicksand;
+}
+
+/* Estilização do conteúdo da Discussão após o click de criar tópico */
+.div-article-commom12 #second-article #duvida_sugestao {
+    padding-top: 15px; 
+
+    font-family: Quicksand;
+    font-style: normal; 
+    font-weight: normal; 
+    font-size: 14px; 
+    line-height: 17px; 
+
+    text-align: center;
+}
+.div-article-commom12 #second-article label {
+    margin-left: 18px; 
+
+    font-weight: bold; 
+    font-size: 16px; 
+    line-height: 19px; 
+
+    color: var(--color-primary);
+}
+.div-article-commom12 #second-article .commom_inputs {
+    padding-left: 23px;
+    margin-left: 18px;
+    
+    width: calc(100% - 36px); 
+    height: 39px;
+    
+    background: var(--color-background); 
+
+    border: 1px solid #CCCCCC; 
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.div-article-commom12 #second-article #footer-newTopic img {
+    width: 20px;
+    height: 20px;
+}
+.div-article-commom12 #second-article #footer-newTopic #button_submit_newTopic {
+    width: 205px; 
+    height: 31px; 
+
+    font-family: Quicksand; 
+    font-style: normal; 
+    font-weight: bold; 
+    font-size: 15px; 
+    line-height: 16px; 
+    text-align: center;
+    
+    background: linear-gradient(180deg, #FEB154 0%, #F1833E 100%); 
+    color: var(--color-background);
+    
+    border-radius: 0px 0px 4px 0px; 
+    border: 0;
+}
